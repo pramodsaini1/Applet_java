@@ -4,4 +4,10 @@
  # complile ------------  javac demo.java
  # Interpreter--------- appletviewer demo.java
 
- # draw String ,Rectangel ,oval ,Arc
+ # draw String
+ # draw Rectangle
+ # draw Oval
+ # draw Arc 
+ # draw fill Arc
+ # draw Line
+ 
