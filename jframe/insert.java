@@ -51,6 +51,28 @@ public class insert extends JFrame implements ActionListener {
 
         }
         public void actionPerformed(ActionEvent e){
-            
+             int roll=Integer.parseInt(jt1.getText());
+             String name=jt2.getText();
+             int avg=Integer.parseInt(jt3.getText());
+             try{
+                 Class.forName("com.mysql.jdbc.Driver");
+                 Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/database-name","root","");
+                 Statement st = cn.createStatement();
+                 if(st.executeUpdate("insert into student values('+roll+','"+name+"','+avg+')")>0){
+                    JOptionPane.showMessageDialog(null,"Record Inserted");
+                 }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Try Again");
+                 }
+                 cn.close();
+             }
+             catch(Exception er){
+                JOptionPane.showMessageDialog(null,er.getMessage());
+             }
+        }
+        public static void main(String[] args) {
+            insert d = new insert("Frame insert example");
+            d.setSize(500,500);
+            d.setVisible(true);
         }
 }
