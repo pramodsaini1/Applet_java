@@ -16,3 +16,4 @@ public class B {
 
     }
 }
+//Hashset is the collection of the unique element called the hashset
